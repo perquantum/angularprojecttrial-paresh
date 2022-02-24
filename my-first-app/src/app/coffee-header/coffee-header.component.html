@@ -1,3 +1,13 @@
-<div id="header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/LaLiga_Santander_logo_%28stacked%29.svg/1200px-LaLiga_Santander_logo_%28stacked%29.svg.png">
+<div class="container">
+    <img src="https://cdn.dribbble.com/users/2898742/screenshots/5660488/logo.jpg" style="height: 100px;">
+    <div>
+        <button (click)="item=item-1" class="btn btn-primary">-</button>
+        <span class="btn btn-primary">{{item}}</span>
+        <button (click)="item=item+1" class="btn btn-primary">+</button>
+    </div>
+    <p> No. of Items : {{item}}</p>
+
+    <label for="item-input">Add an item:</label>
+    <input type="text" id="item-input" #newItem>
+    <button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
 </div>

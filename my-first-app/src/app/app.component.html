@@ -24,10 +24,72 @@
             <td>{{lname}}</td>
         </tr>
     </tbody>
-</table> -->
+</table> 
 
 <div id="home-page">
 <app-coffee-header></app-coffee-header>
 <app-coffee-body></app-coffee-body>
 <app-coffee-footer></app-coffee-footer>
+</div> -->
+<!-- 
+<div class="container">
+    <label>First Name : </label>
+    <input name="firstname" [(ngModel)]="fname"><br>
+    <label>Last Name : </label>
+    <input name="lastname" [(ngModel)]="lname"><br>
+    <p>Your full name is {{fname}} {{lname}}</p>
+
+    <div>
+        <label>Enter a Number :</label>
+        <input name="num" [(ngModel)]="num">
+        <p *ngIf="num%2!=0">The number entered is Odd</p>
+        <p *ngIf="num%2==0">The number entered is Even</p>
+    </div>
+    <div class="container">
+        <h6>Numbers</h6>
+        <div *ngFor="let numarray of numarrays">
+            <p>{{numarray}}</p>
+        </div>
+        <h6>Names</h6>
+        <div *ngFor="let strarray of strarrays">
+            <p>{{strarray}}</p>
+        </div>
+
+        <h6>Names with more than 5 letters</h6>
+        <div *ngFor="let strarray of strarrays">
+            <p *ngIf="strarray.length>5">{{strarray}}</p>
+        </div>
+
+
+
+
+
+
+        <div *ngFor="let strarray of strarrays">
+        </div>
+
+
+        <div>
+            <button (click)="show_child()">Click Here</button>
+            <div>
+                <p>{{txt}}</p>
+            </div>
+        </div>
+
+
+       
+
+
+    </div>
+</div> -->
+
+
+
+
+
+
+<app-product></app-product>
+
+<div id="cart" class="container">
+    <p>Total items in cart : {{cart_item_num}}</p>
 </div>

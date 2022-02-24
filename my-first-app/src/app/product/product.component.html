@@ -1,0 +1,16 @@
+<div id="products-wrapper" class="row">
+    <div class="col-4">Product-1</div>
+    <div class="col-4">Product-2</div>
+    <div class="col-4">Product-3</div>
+</div>
+
+
+<div id="product-item" class="container">
+    <div>
+        
+    </div>
+    <img id="product-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvFTF5BpE_IJ3fGr8M_o0e422oAylOh49ux5XU16AP6O2_hNiSmWo9lUCF_vHidBuKzEE&usqp=CAU"><br>
+    <button id="product-btn" (click)="show_description()" class="btn btn-primary">Description</button>
+</div> 
+
+<app-product-description *ngIf="desc"></app-product-description>
