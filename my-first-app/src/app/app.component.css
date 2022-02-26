@@ -1,4 +1,4 @@
-#home-page{
+/* #home-page{
     height: 100%;
     width: 100%;
 }
@@ -6,4 +6,43 @@
     margin: 50px;
     border: solid black 1px;
     padding: 10px;
+} */
+
+.blue{
+    color: blue;
+}
+.green{
+    color: green;
+}
+.cart-item{
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5%;
+    width: 40%;
+    margin: 5%;
+    float: left;
+}
+#cart{
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 10px;
+    padding: 40px;
+}
+#item{
+    width: 80%;
+    background-color: blue;
+}
+#total{
+    font-size: 50px;
+}
+#items{
+    width: 100%;
+    background-color: yellow;
+}
+#cart-title{
+    text-align: center;
+}
+.table{
+    margin-top: 50px;
 }

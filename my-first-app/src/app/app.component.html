@@ -88,8 +88,76 @@
 
 
 
-<app-product></app-product>
+<!-- <app-product></app-product>
 
 <div id="cart" class="container">
     <p>Total items in cart : {{cart_item_num}}</p>
+</div> -->
+
+<!-- <div class="container">
+    <p [ngClass]="item>10?'red':'yellow'">{{item}}</p>
+</div>
+
+<button (click)="enable()" class="btn btn-primary">Enable</button>
+<button (click)="disable()" class="btn btn-primary">Disable</button>
+<p *ngIf="flag">Some Text</p>
+
+<p *ngFor="let i in data">
+    {{i}}
+</p>
+
+<table class="table" id="dataTable">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Company</th>
+        <th>Action</th>
+    </tr>
+    <tr [ngClass]="d.id%2==0?'blue':'green'" *ngFor="let d of data" [attr.id]="d.id">
+        <td>{{d.id}}</td>
+        <td>{{d.name}}</td>
+        <td>{{d.username}}</td>
+        <td>{{d.email}}</td>
+        <td>
+            {{d.address.street}},
+            {{d.address.suite}},
+            {{d.address.city}},
+            {{d.address.zipcode}},
+            Geolocation({{d.address.geo.lat}},{{d.address.geo.lng}})
+        </td>
+        <td>{{d.phone}}</td>
+        <td>{{d.website}}</td>
+        <td>{{d.company.name}}, {{d.company.catchPhrase}}, {{d.company.bs}}</td>
+        <td><button (click)="removeItem(d)" class="btn btn-danger">Remove</button></td>
+    </tr>
+</table> -->
+
+
+<div id="items">
+    <app-product (newItemEvent)="addDetails($event)"></app-product>
+</div>
+
+<div id="cart">
+    
+    <h1 id="cart-title">List of Items in the Cart</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr *ngFor="let detail of details; let i = index" [attr.data-index]="i" >
+                    <td>{{i+1}}</td>
+                    <td *ngFor="let d of detail">{{d}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="total"><b>Total Price : {{totalAmount}}</b></p>
 </div>

@@ -1,9 +1,4 @@
-<div id="products-wrapper" class="row">
-    <div class="col-4">Product-1</div>
-    <div class="col-4">Product-2</div>
-    <div class="col-4">Product-3</div>
-</div>
-
+<!-- 
 
 <div id="product-item" class="container">
     <div>
@@ -13,4 +8,31 @@
     <button id="product-btn" (click)="show_description()" class="btn btn-primary">Description</button>
 </div> 
 
-<app-product-description *ngIf="desc"></app-product-description>
+
+
+<app-product-description (countChanged)="countChangedHandler($event)" *ngIf="desc"></app-product-description> -->
+
+
+<div id="product-list-wrapper">
+    <ul id="product-list">
+        
+        <li *ngFor="let product of products" class="product-list-item">
+            <img class="product-img" src="https://cdn1.vectorstock.com/i/1000x1000/14/10/simple-coffee-logo-vector-24731410.jpg">
+            Product ID : <b>{{product.id}}</b><br>
+            Product Name : <b>{{product.name}}</b><br>
+            Quantity : <b>{{product.quantity}}</b><br>
+            Price : <b>{{product.price}}</b><br>
+            Manufacturing Location : <b>{{product.loc}}</b><br>
+
+            <div class="item-action-wrapper">
+                <div class="item-action-btn">
+                    <button (click)="decrement(product.quantity, product.id)" class="item-update">-</button>
+                    <button class="item-update">{{product.quantity}}</button>
+                    <button (click)="increment(product.quantity, product.id)" class="item-update">+</button><br>
+                </div>
+                <button [disabled]="product.quantity==0" (click)="addItem(product.name, product.price, product.quantity)" class="btn btn-primary item-update-add">Add to Cart</button>
+            </div>
+        </li>
+    </ul>
+
+</div>
