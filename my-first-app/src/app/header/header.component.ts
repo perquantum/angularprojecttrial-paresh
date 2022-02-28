@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CounterService } from '../counter.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+
+
+  
+  displayData:any;
+  count = 0;
+  constructor(private counter:CounterService) {
+  this.counter.increment(this.count);
+
+  this.displayData = this.counter.userData;
+  console.log(this.displayData);
+  }
+
+  increment(){
+    this.count = this.counter.increment(this.count);
+  }
 
   ngOnInit(): void {
   }
-  itemFooter =  "Item of Footer";
 
 }

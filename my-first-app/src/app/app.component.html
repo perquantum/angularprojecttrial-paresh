@@ -138,7 +138,7 @@
 </table> -->
 
 
-<div id="items">
+<!-- <div id="items">
     <app-product (newItemEvent)="addDetails($event)"></app-product>
 </div>
 
@@ -160,4 +160,88 @@
         </tbody>
     </table>
     <p id="total"><b>Total Price : {{totalAmount}}</b></p>
+</div> -->
+
+<!-- <p>{{getDate}}</p>
+<table class="table">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Company</th>
+        </tr>
+        <tr *ngFor="let user of userInfo">
+            <td>{{user}}</td>
+            <td>{{user}}</td>
+            <td>{{user}}</td>
+            <td>{{user}}</td>
+            <td>{{user}}</td>
+            <td>{{user}}</td>
+            <td>{{user}}</td>
+            <td>{{user}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<!-- 
+<app-header></app-header>
+<p ngModel=>Parent Value : {{value}} </p> -->
+
+<!-- <input type="text" ngModel="{{inputValue}}">
+<p>{{inputValue}}</p>
+<app-header></app-header> -->
+
+
+<!-- <div class="container-fluid">
+    <form #myform="ngForm" (ngSubmit)="onSubmit(myform.value)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input required name="email" [ngModel]="users.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input name="passowrd" [ngModel]="users.password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input name="checkbox" [ngModel]="users.checkbox" type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button [disabled]="!myform.valid" name="submit" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<app-header></app-header> -->
+
+<!-- <label>Enter Number : </label>
+<input type="number" name="number" ngModel="number" #number [ngModel]="number">
+<button class="btn btn-primary" (click)="showTable(number.value)">Show Table</button>
+
+<table class="table">
+    <tbody>
+        <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+            <td>{{number.value}}</td>
+            <td>X</td>
+            <td>{{i}}</td>
+            <td>=</td>
+            <td>{{ans[i]}}</td>
+        </tr>
+    </tbody>
+</table> -->
+
+<div class="container-fluid">
+    <form #trip="ngForm">
+        <label>From</label>
+        <input type="date" name="from" #from required ngModel="{{from}}"><br>
+        <label>To</label>
+        <input type="date" name="to" #to required ngModel="{{to}}"><br>
+        <span style="color: red;">Enter a valid date</span>
+        <label>Price</label>
+        <input type="number" name="price" #price required><br>
+        <button class="btn btn-primary" [disabled]="!trip.form.valid" (click)="showDetails(from.value, to.value, price.value)">Submit</button>
+    </form>
 </div>

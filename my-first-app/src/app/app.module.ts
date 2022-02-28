@@ -12,6 +12,9 @@ import { CoffeeFooterComponent } from './coffee-footer/coffee-footer.component';
 import { CoffeeBodyComponent } from './coffee-body/coffee-body.component';
 import { ProductComponent } from './product/product.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
+import { DateTimeService } from './date-time.service'
+import { UserInfoService } from './user-info.service'
+import { CounterService } from './counter.service'
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import { ProductDescriptionComponent } from './product-description/product-descr
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DateTimeService, UserInfoService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
