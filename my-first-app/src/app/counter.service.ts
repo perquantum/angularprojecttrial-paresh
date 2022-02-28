@@ -6,9 +6,10 @@ import { Injectable } from '@angular/core';
 export class CounterService {
 
   constructor() { }
-  
+  value = 0;
   increment(flag:number){
     flag++;
+    this.value = flag;
     return flag;
   }
   copyText(textValue:string){

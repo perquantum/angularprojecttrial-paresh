@@ -16,16 +16,16 @@ export class AppComponent {
 
 
   getDate:any;
-  value = 0;
+  count = 0;
 
-  constructor(private today:DateTimeService, private getUserInfo:UserInfoService, private counter:CounterService){
+  constructor(private today:DateTimeService, private getUserInfo:UserInfoService, public counter:CounterService){
     this.getDate = this.today;
   }
-
-  increment(){
-    this.value = this.counter.increment(this.value);
+  
+  clickToIncrement(value:any){
+    this.count = this.counter.increment(value);
   }
-
+ 
   
   userInfo = this.getUserInfo.userData;
   inputValue:any = '';

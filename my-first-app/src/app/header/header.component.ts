@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   
   displayData:any;
   count = 0;
-  constructor(private counter:CounterService) {
+  constructor(public counter:CounterService) {
   this.counter.increment(this.count);
 
   this.displayData = this.counter.userData;

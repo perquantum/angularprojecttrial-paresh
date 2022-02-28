@@ -30,8 +30,8 @@
 <app-coffee-header></app-coffee-header>
 <app-coffee-body></app-coffee-body>
 <app-coffee-footer></app-coffee-footer>
-</div> -->
-<!-- 
+</div>
+
 <div class="container">
     <label>First Name : </label>
     <input name="firstname" [(ngModel)]="fname"><br>
@@ -81,20 +81,19 @@
 
 
     </div>
-</div> -->
+</div>
 
 
 
 
 
 
-<!-- <app-product></app-product>
+ <app-product></app-product>
 
 <div id="cart" class="container">
     <p>Total items in cart : {{cart_item_num}}</p>
-</div> -->
-
-<!-- <div class="container">
+</div>
+ <div class="container">
     <p [ngClass]="item>10?'red':'yellow'">{{item}}</p>
 </div>
 
@@ -135,10 +134,10 @@
         <td>{{d.company.name}}, {{d.company.catchPhrase}}, {{d.company.bs}}</td>
         <td><button (click)="removeItem(d)" class="btn btn-danger">Remove</button></td>
     </tr>
-</table> -->
+</table>
 
 
-<!-- <div id="items">
+<div id="items">
     <app-product (newItemEvent)="addDetails($event)"></app-product>
 </div>
 
@@ -160,9 +159,9 @@
         </tbody>
     </table>
     <p id="total"><b>Total Price : {{totalAmount}}</b></p>
-</div> -->
+</div>
 
-<!-- <p>{{getDate}}</p>
+<p>{{getDate}}</p>
 <table class="table">
     <tbody>
         <tr>
@@ -186,17 +185,17 @@
             <td>{{user}}</td>
         </tr>
     </tbody>
-</table> -->
-<!-- 
+</table>
+
 <app-header></app-header>
-<p ngModel=>Parent Value : {{value}} </p> -->
+<p ngModel=>Parent Value : {{value}} </p>
 
-<!-- <input type="text" ngModel="{{inputValue}}">
+<input type="text" ngModel="{{inputValue}}">
 <p>{{inputValue}}</p>
-<app-header></app-header> -->
+<app-header></app-header>
 
 
-<!-- <div class="container-fluid">
+<div class="container-fluid">
     <form #myform="ngForm" (ngSubmit)="onSubmit(myform.value)">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -215,9 +214,9 @@
       </form>
 </div>
 
-<app-header></app-header> -->
+<app-header></app-header>
 
-<!-- <label>Enter Number : </label>
+<label>Enter Number : </label>
 <input type="number" name="number" ngModel="number" #number [ngModel]="number">
 <button class="btn btn-primary" (click)="showTable(number.value)">Show Table</button>
 
@@ -231,7 +230,7 @@
             <td>{{ans[i]}}</td>
         </tr>
     </tbody>
-</table> -->
+</table>
 
 <div class="container-fluid">
     <form #trip="ngForm">
@@ -239,9 +238,12 @@
         <input type="date" name="from" #from required ngModel="{{from}}"><br>
         <label>To</label>
         <input type="date" name="to" #to required ngModel="{{to}}"><br>
-        <span style="color: red;">Enter a valid date</span>
         <label>Price</label>
         <input type="number" name="price" #price required><br>
         <button class="btn btn-primary" [disabled]="!trip.form.valid" (click)="showDetails(from.value, to.value, price.value)">Submit</button>
     </form>
 </div>
+
+<button (click)="clickToIncrement(count)">Increment</button>
+<p>Parent Value : {{count}}</p>
+<app-header></app-header> -->
