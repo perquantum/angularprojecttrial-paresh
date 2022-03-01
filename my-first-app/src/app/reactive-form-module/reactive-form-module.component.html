@@ -1,0 +1,22 @@
+<p>reactive-form-module works!</p>
+
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <div>
+            <label> Name:
+                <input formControlName="name" placeholder="First Name" type="text">
+            </label>
+        </div>
+        <div>
+            <label> Email:
+                <input formControlName="email" placeholder="First Name" type="email" required>
+            </label>
+        </div>
+        <div>
+            <label> Message:
+                <input formControlName="msg" placeholder="First Name" type="text">
+            </label>
+        </div>
+        <button [disabled]="!myForm.valid" class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>

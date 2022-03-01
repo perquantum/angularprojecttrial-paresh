@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,7 +14,9 @@ import { ProductComponent } from './product/product.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { DateTimeService } from './date-time.service'
 import { UserInfoService } from './user-info.service'
-import { CounterService } from './counter.service'
+import { CounterService } from './counter.service';
+import { ReactiveFormModuleComponent } from './reactive-form-module/reactive-form-module.component';
+import { ReactiveAddressFormComponent } from './reactive-address-form/reactive-address-form.component'
 
 @NgModule({
   declarations: [
@@ -26,12 +28,15 @@ import { CounterService } from './counter.service'
     CoffeeFooterComponent,
     CoffeeBodyComponent,
     ProductComponent,
-    ProductDescriptionComponent
+    ProductDescriptionComponent,
+    ReactiveFormModuleComponent,
+    ReactiveAddressFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DateTimeService, UserInfoService, CounterService],
   bootstrap: [AppComponent]
