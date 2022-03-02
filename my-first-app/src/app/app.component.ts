@@ -3,6 +3,11 @@ import { CounterService } from './counter.service';
 // import { AnyMxRecord } from 'dns';
 import { DateTimeService } from './date-time.service';
 import { UserInfoService } from './user-info.service';
+import { HttpClient } from '@angular/common/http';
+import { observable, Subscriber } from 'rxjs';
+import { HttpDataRequestService } from './http-data-request.service';
+import { AnyForUntypedForms, FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -14,60 +19,88 @@ export class AppComponent {
     throw new Error('Method not implemented.');
   }
 
+constructor(private ht:HttpDataRequestService){}
 
-  getDate:any;
-  count = 0;
+details:any;
+result:any;
+ngOnInit(){
+  this.ht.getData().subscribe(data => console.log(data));
+}
 
-  constructor(private today:DateTimeService, private getUserInfo:UserInfoService, public counter:CounterService){
-    this.getDate = this.today;
+show(data:any){
+    this.result=data;
   }
+
+  id="";
+  fname="";
+  lname="";
+  email="";
+
+  getDetails(id:any){
+    alert(typeof(id)+id);
+    console.log(id);
+    this.id=this.result[id-1].id;
+    this.fname=this.result[id-1].first_name;
+    this.lname=this.result[id-1].last_name;
+    this.email=this.result[id-1].email;
+  }
+}
+
+
+
+  // getDate:any;
+  // count = 0;
+
+  // constructor(private today:DateTimeService, private getUserInfo:UserInfoService, public counter:CounterService){
+  //   this.getDate = this.today;
+  // }
   
-  clickToIncrement(value:any){
-    this.count = this.counter.increment(value);
-  }
+  // clickToIncrement(value:any){
+  //   this.count = this.counter.increment(value);
+  // }
  
   
-  userInfo = this.getUserInfo.userData;
-  inputValue:any = '';
+  // userInfo = this.getUserInfo.userData;
+  // inputValue:any = '';
 
-  users={
-    "email":"",
-    "password":"",
-    "checkbox":""
-  }
+  // users={
+  //   "email":"",
+  //   "password":"",
+  //   "checkbox":""
+  // }
 
-  onSubmit(value:any){
-    this.users = value;
-    this.counter.sendData(this.users);
-  }
+  // onSubmit(value:any){
+  //   this.users = value;
+  //   this.counter.sendData(this.users);
+  // }
 
-  ans:any= [];
-  i = 0;
+  // ans:any= [];
+  // i = 0;
 
-  showTable(num:any){
-    this.ans = [];
-    for(let j=0; j<=10; j++){
-    let i = num*j;
-    this.ans.push(i);
-    }
-  }
+  // showTable(num:any){
+  //   this.ans = [];
+  //   for(let j=0; j<=10; j++){
+  //   let i = num*j;
+  //   this.ans.push(i);
+  //   }
+  // }
 
 
 
 
 
   
-  from:any;
-  to:any;
-  price:any;
+  // from:any;
+  // to:any;
+  // price:any;
 
-  showDetails(from:any, to:any, price:any){
-    this.from=new Date(from).getTime();
-    this.to=new Date(to).getTime();
-    let diff = (this.to-this.from)/(1000*3600*24);
-    this.price = price;
-    console.log("Total amount for trip of " + diff + " days is "+ (this.price)*diff);
-  }
+  // showDetails(from:any, to:any, price:any){
+  //   this.from=new Date(from).getTime();
+  //   this.to=new Date(to).getTime();
+  //   let diff = (this.to-this.from)/(1000*3600*24);
+  //   this.price = price;
+  //   console.log("Total amount for trip of " + diff + " days is "+ (this.price)*diff);
+  // }
 
 
 
@@ -364,4 +397,3 @@ export class AppComponent {
   //   this.totalItems++;
   //   this.totalAmount = this.totalAmount + cost;
   // }
-}

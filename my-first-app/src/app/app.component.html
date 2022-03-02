@@ -249,4 +249,39 @@
 <app-header></app-header> -->
 
 <!-- <app-reactive-form-module></app-reactive-form-module> -->
-<app-reactive-address-form></app-reactive-address-form>
+<!-- <app-reactive-address-form></app-reactive-address-form> -->
+
+<!-- <ul *ngFor="let r of result">
+    <li *ngFor="let d of r"></li>
+</ul> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<form>
+    <label>ID
+        <input type="number" [(ngModel)]="id" placeholder="{{id}}">
+    </label><br>
+
+    <label>First Name
+        <input type="text" [(ngModel)]="fname" placeholder="{{fname}}">
+    </label><br>
+
+    <label>Last Name
+        <input type="text" [(ngModel)]="lname" placeholder="{{lname}}">
+    </label><br>
+
+    <label>Email
+        <input type="text"  [(ngModel)]="email" placeholder="{{email}}">
+    </label><br>
+
+    <button (click)="getDetails(id)" type="submit">Get Details</button>
+</form>

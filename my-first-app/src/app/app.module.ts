@@ -17,6 +17,7 @@ import { UserInfoService } from './user-info.service'
 import { CounterService } from './counter.service';
 import { ReactiveFormModuleComponent } from './reactive-form-module/reactive-form-module.component';
 import { ReactiveAddressFormComponent } from './reactive-address-form/reactive-address-form.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReactiveAddressFormComponent } from './reactive-address-form/reactive-a
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [DateTimeService, UserInfoService, CounterService],
   bootstrap: [AppComponent]
